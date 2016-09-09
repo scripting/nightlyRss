@@ -1,0 +1,7 @@
+{
+    "urlLinkblogFeed": "http://radio3.io/users/davewiner/rss.xml",
+    "s3PathNightlyFeed": "/bullmancuso.org/feeds/nightlyLinks.xml",
+    "emailSendTo": "bulllinkblog@googlegroups.com",
+    "emailSendFrom": "bullmancuso@gmail.com",
+    "titleTemplate": "<h1>Bull Mancuso's links for [date] </h1>\n\n"
+}
