@@ -1,0 +1,74 @@
+<?xml encoding="ISO-8859-1" version="1.0"?>
+<opml version="2.0">
+	<head>
+		<title>emailtemplate.html</title>
+		<dateModified>&lt;%dateModified%></dateModified>
+		<expansionState></expansionState>
+		<vertScrollState>1</vertScrollState>
+		<windowTop>300</windowTop>
+		<windowLeft>700</windowLeft>
+		<windowBottom>900</windowBottom>
+		<windowRight>1500</windowRight>
+		</head>
+	<body text="emailtemplate.html">
+		<outline text="&lt;html&gt;">
+			<outline text="&lt;head&gt;">
+				<outline text="&lt;title&gt;[%title%]&lt;/title&gt;"></outline>
+				<outline text="&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;"></outline>
+				<outline text="&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;"></outline>
+				<outline text="&lt;%basicIncludes2%&gt;"></outline>
+				<outline created="Thu, 12 Dec 2013 17:06:51 GMT" pgfnum="33502" text="&lt;script&gt;">
+					<outline text="function everySecond () {">
+						<outline text="}"></outline>
+						</outline>
+					<outline text="function startup () {">
+						<outline text="console.log (&quot;startup&quot;);"></outline>
+						<outline text="self.setInterval (function () {everySecond ()}, 1000); "></outline>
+						<outline text="}"></outline>
+						</outline>
+					<outline created="Thu, 12 Dec 2013 17:07:17 GMT" pgfnum="33504" text="&lt;/script&gt;"></outline>
+					</outline>
+				<outline created="Wed, 11 Sep 2013 14:27:45 GMT" pgfnum="30095" text="&lt;style&gt;">
+					<outline text="body {">
+						<outline text="font-family: Ubuntu;"></outline>
+						<outline text="font-size: 18px;"></outline>
+						<outline text="background-color: whitesmoke;"></outline>
+						<outline text="}"></outline>
+						</outline>
+					<outline text=".divPageBody {">
+						<outline text="width: 60%;"></outline>
+						<outline text="margin-top: 90px;"></outline>
+						<outline text="margin-left: auto;"></outline>
+						<outline text="margin-right: auto;"></outline>
+						<outline text="}"></outline>
+						</outline>
+					<outline created="Wed, 11 Sep 2013 14:30:17 GMT" pgfnum="30105" text="&lt;/style&gt;"></outline>
+					</outline>
+				<outline text="&lt;/head&gt;"></outline>
+				</outline>
+			<outline text="&lt;body&gt;">
+				<outline text="&lt;div class=&quot;divPageBody&quot;&gt;">
+					<outline text="&lt;h1 style=&quot;color: black; font-weight: bold;&quot;&gt;[%title%]&lt;/h1&gt;"></outline>
+					<outline text="&lt;div style=&quot;font-size: 16px; color: black; line-height: 130%;&quot;&gt;">
+						<outline text="[%bodytext%]"></outline>
+						<outline text="&lt;/div&gt;"></outline>
+						</outline>
+					<outline text="&lt;div style=&quot;margin-top: 100px; font-size: 16px; color: black; line-height: 130%; border-top: 1px solid silver;&quot;&gt;">
+						<outline text="&lt;p&gt;Today's snarky slogan: [%slogan%]&lt;/p&gt;"></outline>
+						<outline text="&lt;/div&gt;"></outline>
+						</outline>
+					<outline text="&lt;/div&gt;"></outline>
+					</outline>
+				<outline text="&lt;script&gt;">
+					<outline text="$(document).ready (function () {">
+						<outline created="Wed, 30 Oct 2013 15:20:06 GMT" pgfnum="30656" text="startup ();"></outline>
+						<outline text="});"></outline>
+						</outline>
+					<outline text="&lt;/script&gt;"></outline>
+					</outline>
+				<outline text="&lt;/body&gt;"></outline>
+				</outline>
+			<outline text="&lt;/html&gt;"></outline>
+			</outline>
+		</body>
+	</opml>
