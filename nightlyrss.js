@@ -1,4 +1,4 @@
-var myProductName = "nightlyRss", myVersion = "0.40b";
+var myProductName = "nightlyRss", myVersion = "0.41b";
 
 var utils = require ("./lib/utils.js");
 var dateFormat = require ("dateformat");
@@ -167,6 +167,7 @@ function buildNightlyFeed (theDay, callback) {
 					}
 			//the item
 				add ("<item>"); indentlevel++;
+				add ("<title>" + encode ("Dave Winer's links for " + dateFormat (theDay, "m/d/yyyy")) + "</title>"); //10/3/16 by DW
 				add ("<description>" + encode (todaysPreText + todaysText) + "</description>");
 				add ("<guid isPermaLink=\"false\">" + encode (dateFormat (theDay, "m/d/yyyy")) + "</guid>");
 				add ("<pubDate>" + theDay.toUTCString () + "</pubDate>"); 
@@ -229,6 +230,7 @@ function everySecond () {
 		}
 	}
 function startup () {
+	console.log ("\n" + myProductName + " v" + myVersion + " launched at " + new Date ().toLocaleTimeString () + ".\n");
 	fs.readFile (emailTemplateFile, function (err, data) {
 		if (err) {
 			console.log ("startup: error reading email template == " + err.message)
