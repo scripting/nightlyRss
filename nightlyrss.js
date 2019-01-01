@@ -1,4 +1,4 @@
-var myProductName = "nightlyRss", myVersion = "0.41b";
+var myProductName = "nightlyRss", myVersion = "0.4.2";
 
 var utils = require ("./lib/utils.js");
 var dateFormat = require ("dateformat");
@@ -128,16 +128,18 @@ function buildNightlyFeed (theDay, callback) {
 		
 		for (var i = 0; i < itemarray.length; i++) {
 			var item = itemarray [i];
-			if (utils.sameDay (theDay, item.pubDate)) {
-				var link = "<a href=\"" + item.link + "\">" + getDomainFromUrl (item.link) + "</a>";
-				if (todaysText.length > 0) {
-					todaysText += "\n\n";
+			if (item != null) { //12/31/18 by DW
+				if (utils.sameDay (theDay, item.pubDate)) {
+					var link = "<a href=\"" + item.link + "\">" + getDomainFromUrl (item.link) + "</a>";
+					if (todaysText.length > 0) {
+						todaysText += "\n\n";
+						}
+					todaysText += "<p>" + item.description + " " + link + "</p>";
+					feedTitle = item.meta.title;
+					feedLink = item.meta.link;
+					feedDescription = item.meta.description;
+					feedDocs = item.meta.docs;
 					}
-				todaysText += "<p>" + item.description + " " + link + "</p>";
-				feedTitle = item.meta.title;
-				feedLink = item.meta.link;
-				feedDescription = item.meta.description;
-				feedDocs = item.meta.docs;
 				}
 			}
 		

@@ -11,7 +11,7 @@
 		<windowRight>1500</windowRight>
 		</head>
 	<body text="nightlyrss.js">
-		<outline text="var myProductName = &quot;nightlyRss&quot;, myVersion = &quot;0.41b&quot;;"></outline>
+		<outline text="var myProductName = &quot;nightlyRss&quot;, myVersion = &quot;0.4.2&quot;;"></outline>
 		<outline text=""></outline>
 		<outline text="var utils = require (&quot;./lib/utils.js&quot;);"></outline>
 		<outline text="var dateFormat = require (&quot;dateformat&quot;);"></outline>
@@ -175,6 +175,9 @@
 			</outline>
 		<outline text="function buildNightlyFeed (theDay, callback) {">
 			<outline isComment="true" text="Changes">
+				<outline text="12/31/18; 10:23:35 PM by DW">
+					<outline text="Avoid crashing if item is null."></outline>
+					</outline>
 				<outline text="10/3/16; 7:12:58 PM by DW">
 					<outline text="Added an item-level title on the theory that this is what IFTTT needs to do its thing. ">
 						<outline text="http://scripting.com/2016/10/03/iftttDoesntLikeThisFeed.html"></outline>
@@ -199,17 +202,20 @@
 				<outline isComment="true" text="console.log (&quot;There are &quot; + itemarray.length + &quot; items in the feed.&quot;);"></outline>
 				<outline text="for (var i = 0; i &lt; itemarray.length; i++) {">
 					<outline text="var item = itemarray [i];"></outline>
-					<outline text="if (utils.sameDay (theDay, item.pubDate)) {">
-						<outline text="var link = &quot;&lt;a href=\&quot;&quot; + item.link + &quot;\&quot;&gt;&quot; + getDomainFromUrl (item.link) + &quot;&lt;/a&gt;&quot;;"></outline>
-						<outline text="if (todaysText.length &gt; 0) {">
-							<outline text="todaysText += &quot;\n\n&quot;;"></outline>
+					<outline text="if (item != null) { //12/31/18 by DW">
+						<outline text="if (utils.sameDay (theDay, item.pubDate)) {">
+							<outline text="var link = &quot;&lt;a href=\&quot;&quot; + item.link + &quot;\&quot;&gt;&quot; + getDomainFromUrl (item.link) + &quot;&lt;/a&gt;&quot;;"></outline>
+							<outline text="if (todaysText.length &gt; 0) {">
+								<outline text="todaysText += &quot;\n\n&quot;;"></outline>
+								<outline text="}"></outline>
+								</outline>
+							<outline text="todaysText += &quot;&lt;p&gt;&quot; + item.description + &quot; &quot; + link + &quot;&lt;/p&gt;&quot;;"></outline>
+							<outline text="feedTitle = item.meta.title;"></outline>
+							<outline text="feedLink = item.meta.link;"></outline>
+							<outline text="feedDescription = item.meta.description;"></outline>
+							<outline text="feedDocs = item.meta.docs;"></outline>
 							<outline text="}"></outline>
 							</outline>
-						<outline text="todaysText += &quot;&lt;p&gt;&quot; + item.description + &quot; &quot; + link + &quot;&lt;/p&gt;&quot;;"></outline>
-						<outline text="feedTitle = item.meta.title;"></outline>
-						<outline text="feedLink = item.meta.link;"></outline>
-						<outline text="feedDescription = item.meta.description;"></outline>
-						<outline text="feedDocs = item.meta.docs;"></outline>
 						<outline text="}"></outline>
 						</outline>
 					<outline text="}"></outline>
